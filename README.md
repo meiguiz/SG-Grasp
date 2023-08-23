@@ -5,8 +5,9 @@ SG-Grasp: Semantic Segmentation Prior Guided Robotic Grasp Oriented to Weakly Te
 
 ## SG-Grasp
 ---
-The video of robotic experiments can be found at: https://youtu.be/ChjeqFk0_mA. 
-Unseen object instance segmentation performance on [TROSD](http://www.tsinghua-ieit.com/trosd_links) dataset [1] 
+The video of robotic experiments can be found at [this](https://youtu.be/ChjeqFk0_mA). 
+
+Unseen object instance segmentation performance on [TROSD](http://www.tsinghua-ieit.com/trosd) dataset [1] 
 
 |               Method              |   Input   | Use Synthetic Data |    Backbone   | mask AP | box AP |     Reference     |
 |:---------------------------------:|:---------:|:------------------:|:-------------:|:-------:|:------:|:-----------------:|
