@@ -75,7 +75,7 @@ To evaluate RTSegNet on the TROSD dataset
 ```
 $ python tools/test.py --configs $CONFIG_PATH/rtsegnet_trosd.py \
     --checkpoint $WEIGHT_PATH/iter_120000.pth \
-    --eval \
+    --eval 
 ```
 
 
@@ -83,7 +83,7 @@ $ python tools/test.py --configs $CONFIG_PATH/rtsegnet_trosd.py \
 
 To visualize the inference results of RTSegNet on the TROSD dataset. Change the config, checkpoint, input_data and output_data dirs in visualize.py to your path.
 ```
-$ python tools/visualize.py \
+$ python tools/visualize.py 
 ```
 
 
