@@ -30,10 +30,10 @@ $ cd SG-Grasp
 $ pip install -v -e .
 ```
 
-2. Download the provided RTSegNet weights pre-trained on TROSD dataset. 
-- [rgb only](https://drive.google.com/file/d/128PI9Z6h3VBjBOVEIHV6lPUnk9YerfL6/view?usp=sharing)
+2. Download the provided RTSegNet weights trained on TROSD dataset and put the weight in work_dirs. 
+- [weight](https://drive.google.com/file/d/128PI9Z6h3VBjBOVEIHV6lPUnk9YerfL6/view?usp=sharing)
 
-3. Download the WISDOM-Real dataset [[Link]](https://sites.google.com/view/wisdom-dataset/dataset_links)
+3. Download the [TROSD](http://www.tsinghua-ieit.com/trosd) dataset[1] and change the format as follows:
  ```
    data/trosd
    ├─TR_annotations
@@ -58,87 +58,33 @@ $ pip install -v -e .
    │  
    ├─other_files
    ```
-4. Set the path to the dataset and pretrained weights (You can put this into your bash profile)
-```
-$ export WISDOM_PATH={/path/to/the/wisdom-real/high-res/dataset}
-$ export WEIGHT_PATH={/path/to/the/pretrained/weights}
-
-```
-
+4. Set the path to the dataset in config file.
 
 
 ### Train
 
-To train an SF Mask R-CNN (confidence fusion, RGB-noisy depth as input) on a synthetic dataset. 
+To train RTSegNet on the TROSD dataset. 
 ```
-$ python train.py --gpu 0 --cfg rgb_noisydepth_confidencefusion
+$ python tools/train.py configs/rtsegnet/rtsegnet_trosd.py
 ```
-To fine-tune the SF Mask R-CNN on WISDOM dataset
-```
-$ python train.py --gpu 0 --cfg rgb_noisydepth_confidencefusion_FT --resume
-```
+
 
 ### Evaluation
 
-To evaluate an SF Mask R-CNN (confidence fusion, RGB-noisy depth as input) on a WISDOM dataset
+To evaluate RTSegNet on the TROSD dataset
 ```
-$ python eval.py --gpu 0 --cfg rgb_noisydepth_confidencefusion \
-    --eval_data wisdom \
-    --dataset_path $WISDOM_PATH \
-    --weight_path $WEIGHT_PATH/SFMaskRCNN_ConfidenceFusion.tar 
+$ python tools/test.py --configs $CONFIG_PATH/rtsegnet_trosd.py \
+    --checkpoint $WEIGHT_PATH/iter_120000.pth \
+    --eval \
 ```
 
 
 ### Visualization
 
-To visualize the inference results of SF Mask R-CNN on a WISDOM dataset
+To visualize the inference results of RTSegNet on the TROSD dataset. Change the config, checkpoint, input_data and output_data dirs in visualize.py to your path.
 ```
-$ python inference.py --gpu 0 --cfg rgb_noisydepth_confidencefusion \
-    --eval_data wisdom --vis_depth \
-    --dataset_path $WISDOM_PATH \
-    --weight_path $WEIGHT_PATH/SFMaskRCNN_ConfidenceFusion.tar 
+$ python tools/visualize.py \
 ```
 
-<img src="./imgs/example1.png" height="150">
-<img src="./imgs/example2.png" height="150">
-<img src="./imgs/example3.png" height="150">
 
-
-### Demo with RealSense
-
-To run real-time demo with realsense-d435
-```
-# SF Mask R-CNN (confidence fusion)
-$ python demo.py --cfg rgb_noisydepth_confidencefusion \
-    --weight_path $WEIGHT_PATH/SFMaskRCNN_ConfidenceFusion.tar 
-
-# SF Mask R-CNN (early fusion)
-$ python demo.py --cfg rgb_noisydepth_earlyfusion \
-    --weight_path $WEIGHT_PATH/SFMaskRCNN_EarlyFusion.tar 
-
-
-# SF Mask R-CNN (late fusion)
-$ python demo.py --cfg rgb_noisydepth_latefusion \
-    --weight_path $WEIGHT_PATH/SFMaskRCNN_LateFusion.tar 
-```
-
-## Authors
-* **Seunghyeok Back** [seungback](https://github.com/SeungBack)
-* **Raeyoung Kang** [raeyo](https://github.com/raeyo)
-* **Taewon Kim** [ailabktw](https://github.com/ailabktw)
-* **Joosoon Lee** [joosoon](https://github.com/joosoon)
-
-
-## Citation
-If you use our work in a research project, please cite our work:
-```
-[1] @inproceedings{back2020segmenting,
-  title={Segmenting unseen industrial components in a heavy clutter using rgb-d fusion and synthetic data},
-  author={Back, Seunghyeok and Kim, Jongwon and Kang, Raeyoung and Choi, Seungjun and Lee, Kyoobin},
-  booktitle={2020 IEEE International Conference on Image Processing (ICIP)},
-  pages={828--832},
-  year={2020},
-  organization={IEEE}
-}
-```
 
