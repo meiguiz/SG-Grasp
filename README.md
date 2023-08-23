@@ -87,4 +87,7 @@ $ python tools/visualize.py \
 ```
 
 
+### Reference
+[1] T. Sun, G. Zhang, W. Yang, J.-H. Xue, and G. Wang, "TROSD: A New RGB-D Dataset for Transparent and Reflective Object Segmentation in Practice," IEEE Transactions on Circuits and Systems for Video Technology, 2023.
+
 
