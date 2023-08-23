@@ -9,37 +9,7 @@ The video of robotic experiments can be found at [this](https://youtu.be/ChjeqFk
 
 Unseen object instance segmentation performance on [TROSD](http://www.tsinghua-ieit.com/trosd) dataset [1] 
 
-|               Method              |   Input   | Use Synthetic Data |    Backbone   | mask AP | box AP |     Reference     |
-|:---------------------------------:|:---------:|:------------------:|:-------------:|:-------:|:------:|:-----------------:|
-|           SD Mask R-CNN           |   Depth   |     Yes (WISDOM)   | ResNet-35-FPN |   51.6  |    -   | [Danielczuk et al.](https://ieeexplore.ieee.org/abstract/document/8793744) |
-|             Mask R-CNN            |    RGB    |         No         | ResNet-35-FPN |   38.4  |    -   | Danielczuk et al. |
-|             Mask R-CNN            |    RGB    |         No         | ResNet-50-FPN |   40.1  |  36.7  |     [Ito et al.](https://openaccess.thecvf.com/content/ACCV2020/html/Ito_Point_Proposal_based_Instance_Segmentation_with_Rectangular_Masks_for_Robot_ACCV_2020_paper.html)    |
-|               D-SOLO              |    RGB    |         No         | ResNet-50-FPN |   42.0  |  39.1  |     Ito et al.    |
-|               PPIS                |    RGB    |         No         | ResNet-50-FPN |   52.3  |  48.1  |     Ito et al.    |
-|             Mask R-CNN            |    RGB    |         Yes (Ours) | ResNet-50-FPN |   59.0  |  61.4  |     Ours          |
-|             Mask R-CNN            |    Depth  |         Yes (Ours) | ResNet-50-FPN |   59.6  |  60.4  |     Ours          |
-|    SF Mask R-CNN (early fusion)   | RGB-Depth |      Yes (Ours)    | ResNet-50-FPN |   55.5  |  57.2  |        [Ours](https://ieeexplore.ieee.org/abstract/document/9190804)       |
-|    SF Mask R-CNN (late fusion)    | RGB-Depth |      Yes (Ours)    | ResNet-50-FPN |   58.7  |  59.0  |        Ours       |
-|**SF Mask R-CNN (confidence fusion)**| RGB-Depth |      Yes (Ours)    | ResNet-50-FPN | **60.5**|**61.0**|        Ours       |
-
-
-<img src="./imgs/model.png" width="800">
- 
-
-**SF Mask R-CNN** is an upgraded version of RGB-D fusion Mask R-CNN with a confidence map estimator [1].
-The main differences from [1] are
-- SF Mask R-CNN generates a self-attention map from RGB and inpainted depth (validity mask and raw depth were used in [1]) 
-- This self-attention map is used as a confidence map; Thus, RGB and depth feature maps fused with spatial self-attention in four different scales.
-- It was fined-tuned on WISDOM-REAL-Train (100 images) and evaluated on public unseen object instance segmentation dataset, WISDOM (The only custom industrial dataset was used previously)
-
-
-
-
-## Updates
-- SF Mask R-CNN has been released (2020/02/18)
-- Paper extended from [1] with the detailed description, synthetic data, and robot demo will be publicly available soon... Stay tuned!
-
-
+![69TVW{7S)BX@QVVA}J`LODD](https://github.com/meiguiz/SG-Grasp/assets/90629126/1c8d6ee4-1ac0-4b87-b32a-1f5d4af4a466)
 
 ## Getting Started
 ---
