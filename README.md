@@ -34,7 +34,24 @@ $ pip install -v -e .
 - [rgb only](https://drive.google.com/file/d/128PI9Z6h3VBjBOVEIHV6lPUnk9YerfL6/view?usp=sharing)
 
 3. Download the WISDOM-Real dataset [[Link]](https://sites.google.com/view/wisdom-dataset/dataset_links)
-
+ ```
+   data/trosd
+   ├─TR_annotations
+   │  ├─cleargrasp_real_known
+   │  │  └─cg_real_test_d415_000000000_1_v_group6.png
+   │  ├─cleargrasp_real_novel
+   │  │  └─cg_real_val_d435_000000000_1_v_group6.png
+   │  └─Trosd
+   │  │  └─new_room_3_group6.png
+   ├─train-test
+   │  ├─train-test-all
+   │  ├─train-test-cornell
+   │  └─train-test-mutil
+   │  └─train-test-single
+   ├─train-test
+   |
+   ├─other_files
+   ```
 4. Set the path to the dataset and pretrained weights (You can put this into your bash profile)
 ```
 $ export WISDOM_PATH={/path/to/the/wisdom-real/high-res/dataset}
