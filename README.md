@@ -3,11 +3,13 @@ SG-Grasp: Semantic Segmentation Prior Guided Robotic Grasp Oriented to Weakly Te
 
 > Ling Tong, Kechen Song, Member, IEEE, Hongkun Tian, Yi Man, Yunhui Yan, and Qinggang Meng, Senior Member, IEEE. 
 
+![) M52~1LS2M75{9S}(@L5 S](https://github.com/meiguiz/SG-Grasp/assets/90629126/317054b6-36a6-4a57-a31f-c5322974de76)
+
 ## SG-Grasp
 ---
 The video of robotic experiments can be found at [this](https://youtu.be/ChjeqFk0_mA). 
 
-Unseen object instance segmentation performance on [TROSD](http://www.tsinghua-ieit.com/trosd) dataset [1] 
+Semantic segmentation for reflective and transparent objects on [TROSD](http://www.tsinghua-ieit.com/trosd) dataset [1] 
 
 ![69TVW{7S)BX@QVVA}J`LODD](https://github.com/meiguiz/SG-Grasp/assets/90629126/1c8d6ee4-1ac0-4b87-b32a-1f5d4af4a466)
 
@@ -17,20 +19,19 @@ Unseen object instance segmentation performance on [TROSD](http://www.tsinghua-i
 
 1. Setup anaconda environment
 ```
-$ conda create -n sfmaskrcnn python=3.7
-$ conda activate sfmaskrcnn
-$ pip install torch torchvision
-$ pip install imgviz tqdm tensorboardX pandas opencv-python imutils pyfastnoisesimd scikit-image pycocotools
-$ pip install pyrealsense2 # for demo
-$ conda activate sfmaskrcnn
+$ conda create --name sggrasp python=3.8 -y
+$ conda activate sggrasp
+$ conda install pytorch torchvision -c pytorch
+$ pip install -U openmim
+$ mim install mmengine
+$ mim install "mmcv>=2.0.0"
+$ git clone -b main https://github.com/meiguiz/SG-Grasp.git
+$ cd SG-Grasp
+$ pip install -v -e .
 ```
 
-2. Download the provided SF Mask R-CNN weights pre-trained on our custom dataset. 
+2. Download the provided RTSegNet weights pre-trained on TROSD dataset. 
 - [rgb only](https://drive.google.com/file/d/128PI9Z6h3VBjBOVEIHV6lPUnk9YerfL6/view?usp=sharing)
-- [depth only](https://drive.google.com/file/d/1UTnaehYIHbZzvGbHAAOqEjNxt9FN41RV/view?usp=sharing)
-- [early fusion](https://drive.google.com/file/d/1H5HUo2qP56PfD893mqvuamiiyKfaT-Ux/view?usp=sharing)
-- [late fusion](https://drive.google.com/file/d/1__Vqj9k8K8BckJaikrMqhYNdcjKuvVOf/view?usp=sharing)
-- [confidence fusion](https://drive.google.com/file/d/11RonCOyv5YOBTZJXZxP75XT_V0xuEXTm/view?usp=sharing)
 
 3. Download the WISDOM-Real dataset [[Link]](https://sites.google.com/view/wisdom-dataset/dataset_links)
 
