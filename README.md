@@ -3,7 +3,8 @@ SG-Grasp: Semantic Segmentation Prior Guided Robotic Grasp Oriented to Weakly Te
 
 > Ling Tong, Kechen Song, Member, IEEE, Hongkun Tian, Yi Man, Yunhui Yan, and Qinggang Meng, Senior Member, IEEE. 
 
-![) M52~1LS2M75{9S}(@L5 S](https://github.com/meiguiz/SG-Grasp/assets/90629126/317054b6-36a6-4a57-a31f-c5322974de76)
+![01fd35d9bdc948296481bfe4456d956](https://github.com/meiguiz/SG-Grasp/assets/90629126/ad760eec-eb18-42e1-a099-9ecc02704ce7)
+
 
 ## SG-Grasp
 ---
@@ -31,7 +32,7 @@ $ pip install -v -e .
 ```
 
 2. Download the provided RTSegNet weights trained on TROSD dataset and put the weight in work_dirs. 
-- [weight](https://drive.google.com/file/d/128PI9Z6h3VBjBOVEIHV6lPUnk9YerfL6/view?usp=sharing)
+- [weight](https://drive.google.com/file/d/1Ik9ffzRdolUc0g89fnDy8EQT9YG1Xx_d/view?usp=sharing)
 
 3. Download the [TROSD](http://www.tsinghua-ieit.com/trosd) dataset[1] and change the format as follows:
  ```
