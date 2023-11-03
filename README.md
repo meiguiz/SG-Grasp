@@ -3,7 +3,8 @@ SG-Grasp: Semantic Segmentation Prior Guided Robotic Grasp Oriented to Weakly Te
 
 > Ling Tong, Kechen Song, Member, IEEE, Hongkun Tian, Yi Man, Yunhui Yan, and Qinggang Meng, Senior Member, IEEE. 
 
-![01fd35d9bdc948296481bfe4456d956](https://github.com/meiguiz/SG-Grasp/assets/90629126/ad760eec-eb18-42e1-a099-9ecc02704ce7)
+![图片9](https://github.com/meiguiz/SG-Grasp/assets/90629126/11baf3ef-e684-4621-b6d3-5c716be03738)
+
 
 
 ## SG-Grasp
@@ -12,7 +13,8 @@ The video of robotic experiments can be found at [this](https://youtu.be/ChjeqFk
 
 Semantic segmentation for reflective and transparent objects on [TROSD](http://www.tsinghua-ieit.com/trosd) dataset [1] 
 
-![69TVW{7S)BX@QVVA}J`LODD](https://github.com/meiguiz/SG-Grasp/assets/90629126/1c8d6ee4-1ac0-4b87-b32a-1f5d4af4a466)
+![image](https://github.com/meiguiz/SG-Grasp/assets/90629126/18c51507-0e33-4e14-88f5-d0306b64baf8)
+
 
 ## Getting Started
 ---
